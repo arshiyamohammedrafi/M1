@@ -207,43 +207,41 @@ c.	Else if percentage >= 36: Print “Division = Pass”
 10.	End
 ## PROGRAM:
 ```
-#include <stdio.h>
-
-int main() {
-    int m1, m2, m3, total;
-    float percentage;
-
-    printf("Enter marks of three subjects:\n");
-    scanf("%d %d %d", &m1, &m2, &m3);
-
-   
-    total = m1 + m2 + m3;
-    percentage = total / 3.0;
 
     
-    printf("Total Marks = %d\n", total);
-    printf("Percentage = %.2f%%\n", percentage);
+    #include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int phy,che,ca,total;
+    float per;
+    char div[10];
 
    
-    if (m1 < 33 || m2 < 33 || m3 < 33) {
-        printf("Result: Fail (One or more subjects below 33)\n");
-    } else if (percentage >= 60) {
-        printf("Result: First Division\n");
-    } else if (percentage >= 50) {
-        printf("Result: Second Division\n");
-    } else if (percentage >= 40) {
-        printf("Result: Pass\n");
-    } else {
-        printf("Result: Fail\n");
-    }
+    scanf("%d%d%d",&phy,&che,&ca);
+    total = phy+che+ca;
+    per = total/3.0;
+    if (per>=60)
+	 strcpy(div,"First");
+    else if (per<60&&per>=48)
+	    strcpy(div,"Second");
+	else
+	    if (per<48&&per>=36)
+		strcpy(div,"Pass");
+	     else
+		strcpy(div,"Fail");
 
-    return 0;
+      
+       printf("Total Marks = %d\nPercentage = %5.2f\nDivision = %s\n",total,per,div);
+       return 0;
 }
 ```
 
 ## OUTPUT:
 
-![437744916-6c1ad407-b04a-48af-8c2e-f9a931e1321c](https://github.com/user-attachments/assets/91ba9a8d-a6f9-4d5d-8ade-6ddd245310b3)
+![image](https://github.com/user-attachments/assets/7066d3d6-3326-4425-98d0-955c12134a71)
+
 
 
 
